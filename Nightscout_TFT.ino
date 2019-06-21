@@ -225,6 +225,9 @@ void loop() {
   if (minute(status0_now1) < 10) {
     timeCur = timeCur + "0";
   }
+  if (hour(status0_now1) < 10) {
+    timeCur = "0" + timeCur;
+  }
   timeCur = timeCur + String(minute(status0_now1));
   tft.print(timeCur);
 
