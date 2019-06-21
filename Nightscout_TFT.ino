@@ -25,7 +25,7 @@ const char* host = "XXXXX.herokuapp.com"; //enter your nightscout host here - no
 const int httpsPort = 443;
 const size_t bufferSize = 3 * JSON_ARRAY_SIZE(1) + JSON_OBJECT_SIZE(1) + 2 * JSON_OBJECT_SIZE(3) + JSON_OBJECT_SIZE(13) + 280;
 // SHA1 fingerprint of the host's SSL certificate
-const char* fingerprint = "08:3B:71:72:02:43:6E:CA:ED:42:86:93:BA:7E:DF:81:C4:BC:62:30"; //enter the https fingerprint if you want this verification
+const char* fingerprint = "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"; //enter the https fingerprint if you want this verification
 
 // You can edit these values if you want. They change at which point the BG number changes color.
 int HighBG = 180;
