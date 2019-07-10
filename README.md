@@ -17,7 +17,7 @@ https://github.com/Bodmer/TFT_eSPI (after installation, copy my User_Setup.h to 
 
 https://github.com/esp8266/arduino-esp8266fs-plugin SPIFFS for Arduino IDE Plugin, follow the instructions on the readme
 
-![Image](/IMG_20190620_220930.jpg)
+![Image](/IMG_20190710_101610.jpg)
 
 
 Wiring diagram for the screen is included. Wire it up, install the libraries above, copy the User_Setup.h, set up SPIFFS plugin, load the sketch, use SPIFFS plugin to upload Sketch data, edit your SSID/Password/Nightscout website (both heroku and azure should work), compile and flash.
