@@ -47,7 +47,7 @@ void setup() {
 
   if (!SPIFFS.begin()) {
     Serial.println("SPIFFS initialisation failed!");
-    tft.setCursor(100, 80);
+    tft.setCursor(80, 100);
     tft.println("SPIFFS init failed");
     while (1) yield(); // Stay here twiddling thumbs waiting
   }
@@ -60,7 +60,7 @@ void setup() {
   if (arrows_missing)
   {
     Serial.println("\r\nArrow images missing in SPIFFS, did you upload them?");
-    tft.setCursor(100, 80);
+    tft.setCursor(80, 100);
     tft.println("Files missing!");
     while (1) yield();
   }
@@ -171,9 +171,9 @@ void loop() {
     directarr = "↑↑";
   } else if (String(bgs0_direction) == "DoubleDown") {
     directarr = "↓↓";
-  }  else if (String(bgs0_direction) == "Up") {
+  }  else if (String(bgs0_direction) == "SingleUp") {
     directarr = "↑";
-  }  else if (String(bgs0_direction) == "Down") {
+  }  else if (String(bgs0_direction) == "SingleDown") {
     directarr = "↓";
   }
   Serial.println(directarr);
