@@ -211,7 +211,7 @@ void loop() {
     agepos = 23;
   }
   
-  tft.fillRect (37, 0, 203, 25, TFT_BLACK); //clearing date string for less flicker on refresh
+  tft.fillRect (20, 0, 203, 25, TFT_BLACK); //clearing date string for less flicker on refresh
   tft.setFreeFont(&FreeSerifBold9pt7b);
   tft.setTextColor((agecol), TFT_BLACK);
   tft.setCursor(agepos, 20);
@@ -257,7 +257,7 @@ void loop() {
   if (bgs0_delta >= 10) {
     deltapos = 42;
   }
-  tft.fillRect (40, 180, 200, 60, TFT_BLACK); //clearing Delta string for less flicker on refresh
+  tft.fillRect (35, 180, 200, 60, TFT_BLACK); //clearing Delta string for less flicker on refresh
   tft.setFreeFont(&FreeSerifBold18pt7b);
   tft.setCursor(deltapos, 220);
   tft.setTextColor(TFT_BLUE, TFT_BLACK);
