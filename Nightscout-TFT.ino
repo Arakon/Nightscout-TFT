@@ -64,7 +64,7 @@ void setup() {
     tft.println("Files missing!");
     while (1) yield();
   }
-  else Serial.println("\r\nFonts and images found OK.");
+  else Serial.println("\r\Images found OK.");
 }
 void loop() {
   WiFi.begin(ssid, password);
@@ -181,6 +181,7 @@ void loop() {
 
   int bgcol = TFT_WHITE;
   int agecol = TFT_GREEN;
+  int agepos = 38;
 
   //Change BG number font color according to high, low or critical low numbers
   if (BG >= HighBG) {
@@ -203,10 +204,17 @@ void loop() {
   else {
     agecol = TFT_WHITE;
   }
+  if (dataAge >= 10) {
+    agepos = 30;
+  }
+  if (dataAge >= 100) {
+    agepos = 23;
+  }
+  
   tft.fillRect (37, 0, 203, 25, TFT_BLACK); //clearing date string for less flicker on refresh
   tft.setFreeFont(&FreeSerifBold9pt7b);
   tft.setTextColor((agecol), TFT_BLACK);
-  tft.setCursor(38, 20);
+  tft.setCursor(agepos, 20);
   tft.print("Last Data: ");
   tft.print(dataAge);
   if (dataAge == 1) {
@@ -245,9 +253,13 @@ void loop() {
   tft.println(bgs0_sgv);
 
   //show Delta
+  int deltapos = 54;
+  if (bgs0_delta >= 10) {
+    deltapos = 42;
+  }
   tft.fillRect (40, 180, 200, 60, TFT_BLACK); //clearing Delta string for less flicker on refresh
   tft.setFreeFont(&FreeSerifBold18pt7b);
-  tft.setCursor(54, 220);
+  tft.setCursor(deltapos, 220);
   tft.setTextColor(TFT_BLUE, TFT_BLACK);
   tft.print("Delta: ");
   tft.println(delta);
