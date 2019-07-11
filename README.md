@@ -40,3 +40,8 @@ The sketch is roughly based on this code: https://github.com/robjohnc/nightscout
 - The "Last Data" text will turn red if the data is more than 15 minutes old.
 - The BG value will change to yellow if high, orange if low, and red if critical low. The thresholds can be set in the sketch.
 - The User_Config.h is preconfigured for the above display.
+
+### To do:
+
+- I'm considering implementing support for a single WS2812b LED to show warnings in matching color.
+- May or may not look into implementing audible alarms, although frankly, I believe they'd get annoying fast.
