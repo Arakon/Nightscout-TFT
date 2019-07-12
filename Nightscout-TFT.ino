@@ -285,7 +285,9 @@ void loop() {
   if ((bgs0_trend) == 7) {
     drawJpeg("/DoubleDown.jpg", 180, 116);
   }
-
+ if ((bgs0_trend) == 8) {
+    tft.fillRect (175, 114, 60, 50, TFT_BLACK); }
+    
   //Pause for 45 secs to avoid spamming the server, but keep the clock semi-accurate
   Serial.println("Pausing for 45 seconds");
   delay(45000);
