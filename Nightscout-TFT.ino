@@ -211,7 +211,7 @@ void loop() {
     agepos = 23;
   }
   
-  tft.fillRect (20, 0, 203, 25, TFT_BLACK); //clearing date string for less flicker on refresh
+  tft.fillRect (20, 0, 240, 35, TFT_BLACK); //clearing date string for less flicker on refresh
   tft.setFreeFont(&FreeSerifBold9pt7b);
   tft.setTextColor((agecol), TFT_BLACK);
   tft.setCursor(agepos, 20);
