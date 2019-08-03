@@ -218,9 +218,9 @@ void loop() {
   tft.print("Last Data: ");
   tft.print(dataAge);
   if (dataAge == 1) {
-    tft.println(" min ago");
+    tft.print(" min ago");
   }
-  else tft.println(" mins ago");
+  else tft.print(" mins ago");
 
   //show clock. Uses the time from NS server, not too accurate.
   tft.fillRect (60, 40, 120, 55, TFT_BLACK); //clearing time string for less flicker on refresh
