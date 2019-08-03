@@ -215,13 +215,19 @@ void loop() {
   tft.setFreeFont(&FreeSerifBold9pt7b);
   tft.setTextColor((agecol), TFT_BLACK);
   tft.setCursor(agepos, 20);
+    if ((dataAge == 0) && (bgs0_sgv == 0)) {
+    tft.setTextColor(TFT_RED, TFT_BLACK);
+    tft.print("Data download error!");  
+  }
+  else {
   tft.print("Last Data: ");
   tft.print(dataAge);
   if (dataAge == 1) {
     tft.print(" min ago");
   }
   else tft.print(" mins ago");
-
+  }
+  
   //show clock. Uses the time from NS server, not too accurate.
   tft.fillRect (60, 40, 120, 55, TFT_BLACK); //clearing time string for less flicker on refresh
   tft.setFreeFont(&FreeSerifBold24pt7b);
