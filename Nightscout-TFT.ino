@@ -65,13 +65,16 @@ void setup() {
     while (1) yield();
   }
   else Serial.println("\r\Images found OK.");
-}
-void loop() {
+  
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
+       Serial.print(".");
   }
   Serial.println("");
+
+}
+void loop() {
   Serial.println(WiFi.localIP());
   // Use WiFiClientSecure class to create TLS connection
   WiFiClientSecure client;
@@ -82,8 +85,7 @@ void loop() {
     Serial.println("Sleeping...");
     delay(30000);
     return;
-  }
-
+}
   if (client.verify(fingerprint, host)) {
     Serial.println("certificate matches");
 
@@ -211,11 +213,11 @@ void loop() {
     agepos = 23;
   }
   
-  tft.fillRect (20, 0, 240, 35, TFT_BLACK); //clearing date string for less flicker on refresh
+  tft.fillRect (0, 0, 240, 48, TFT_BLACK); //clearing date string for less flicker on refresh
   tft.setFreeFont(&FreeSerifBold9pt7b);
   tft.setTextColor((agecol), TFT_BLACK);
   tft.setCursor(agepos, 20);
-    if ((dataAge == 0) && (bgs0_sgv == 0)) {
+  if ((dataAge == 0) && (bgs0_sgv == 0)) {
     tft.setTextColor(TFT_RED, TFT_BLACK);
     tft.print("Data download error!");  
   }
@@ -223,11 +225,10 @@ void loop() {
   tft.print("Last Data: ");
   tft.print(dataAge);
   if (dataAge == 1) {
-    tft.print(" min ago");
+    tft.println(" min ago");
   }
-  else tft.print(" mins ago");
+  else tft.println(" mins ago");
   }
-  
   //show clock. Uses the time from NS server, not too accurate.
   tft.fillRect (60, 40, 120, 55, TFT_BLACK); //clearing time string for less flicker on refresh
   tft.setFreeFont(&FreeSerifBold24pt7b);
@@ -293,7 +294,6 @@ void loop() {
   }
  if ((bgs0_trend) == 8) {
     tft.fillRect (175, 114, 60, 50, TFT_BLACK); }
-    
   //Pause for 45 secs to avoid spamming the server, but keep the clock semi-accurate
   Serial.println("Pausing for 45 seconds");
   delay(45000);
