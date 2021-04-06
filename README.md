@@ -36,7 +36,7 @@ The sketch is roughly based on this code: https://github.com/robjohnc/nightscout
 
 ### Functions
 
-- ~~The data is loaded from nightscout every 45 seconds. The clock uses the clock data from NS too, so it's also only updated every 45 seconds.
+- ~~The data is loaded from nightscout every 45 seconds. The clock uses the clock data from NS too, so it's also only updated every 45 seconds.~~
 - Clock now uses NTP server and automatic DST switching. Updates to the display now happen every minute. Note that you will need to configure the timezone setting yourself if you are not in germany.
 - The "Last Data" text will turn red if the data is more than 15 minutes old.
 - The BG value will change to yellow if high, orange if low, and red if critical low. The thresholds can be set in the sketch.
