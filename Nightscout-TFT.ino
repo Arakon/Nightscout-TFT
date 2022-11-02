@@ -14,8 +14,8 @@
 TFT_eSPI tft = TFT_eSPI();
 
 //Put your SSID and PW here
-const char* ssid = "YOUR_SSID"; //enter your SSID
-const char* password = "YOUR_PASSWORD"; //enter your wifi password
+const char* ssid = "SSID"; //enter your SSID
+const char* password = "password"; //enter your wifi password
 
 int hour_c;
 int min_c;
@@ -36,7 +36,7 @@ char* localTime() {
   return buf2;
 }
 
-const char* host = "XXXXX.herokuapp.com"; //enter your nightscout host here - no "https://" needed
+const char* host = "host.herokuapp.com"; //enter your nightscout host here - no "https://" needed
 const int httpsPort = 443;
 const size_t bufferSize = 3 * JSON_ARRAY_SIZE(1) + JSON_OBJECT_SIZE(1) + 2 * JSON_OBJECT_SIZE(3) + JSON_OBJECT_SIZE(13) + 280;
 // SHA1 fingerprint of the host's SSL certificate
@@ -127,7 +127,7 @@ void loop() {
 
     }
 
-    String url = "/pebble";
+    String url = "/pebble"; //if you are using a protected Nightscout instance, generate a viewing token and use "/pebble/?token=xxxxxxxxxxxxxxx" here.
     client.print(String("GET ") + url + " HTTP/1.1\r\n" +
                  "Host: " + host + "\r\n" +
                  "User-Agent: BuildFailureDetectorESP8266\r\n" +
@@ -311,6 +311,7 @@ void loop() {
     if ((bgs0_trend) == 8) {
       tft.fillRect (175, 114, 60, 50, TFT_BLACK);
     }
-
+    delay(500); //added delay to prevent accidental running twice within the same second, resulting in data corruption
   }
+  
 }
