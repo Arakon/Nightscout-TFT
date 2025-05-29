@@ -1,6 +1,8 @@
 # Nightscout-TFT
 Nightscout-based BG value display based on a 3$ Wemos D1 Mini + 4$ TFT Display
 
+## This has been [sort of converted for the ESP32](https://github.com/Arakon/ESP32-Nightscout-TFT) (preferably C3) now! That version even has a web portal for setup and no longer requires uploading anything to SPIFFS.
+
 #### Requires the following libraries:
 
 https://github.com/esp8266/Arduino (Follow the README about getting the Additonal Board Manager set up)
